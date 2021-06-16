@@ -1,0 +1,32 @@
+<body>
+  <header></header>
+  <main>
+    <% if flash[:notice] %>
+　　  <%= flash[:notice] %>
+    <% end %>
+    <p id="notice"></p>
+    <div class="mx-auto" style="width: 40%;">
+      <h1 class="font-weight-bold">
+        welcome to
+        <i class="fas fa-book"></i>
+        Bookers !!
+        </h1>
+      <p>
+        In
+        <i class="fas fa-book"></i>
+        Bookers,
+      </p>
+      <p>you can share and exchange your opinions , inpressions , and emotions</p>
+      <p>about various books!</p>
+      <div class="center">
+        <button type="button" class="p-3 mb-4 badge badge-info text-white text-center" style= "width: 80%;">
+          <%= link_to "Log in", new_user_session_path %>
+        </button>
+        <button type="button" class="p-3 mb-4 badge badge-success text-white text-center" style= "width: 80%;">
+          <%= link_to  "Sign Up", new_user_registration_path %>
+        </button>
+      </div>
+    </div>
+  </main>
+  <footer></footer>
+</body>

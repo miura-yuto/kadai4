@@ -1,0 +1,19 @@
+  <body class="container">
+    <h2>User info</h2>
+    <div class="profile-container">
+      <%= attachment_image_tag user, :profile_image, :fill, 40, 40, format: 'jpeg', fallback: "no_image.jpg" %>
+      <div class="row">
+        <p class="col text-left">name</p>
+        <p class="col"><%= user.name %></p>
+      </div>
+      <div class="row">
+        <p class="col text-left">introduction</p>
+        <p class="col"><%= user.introduction %></p>
+      </div>
+      <%= link_to edit_user_path(user) do %>
+        <button type="button" class="btn btn-outline-dark" style="width: 80%;">
+          <i class="fas fa-user-cog"></i>
+        </button>
+      <% end %>
+    </div>
+  </body>

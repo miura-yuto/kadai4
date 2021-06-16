@@ -1,0 +1,41 @@
+<main class="container">
+  <div class="row-ml-5">
+    <div class="col-ml-5"></div>
+    <div class="mt-2"></div>
+    <h2>Sign up</h2>
+      <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+        <div class="field">
+          <%= f.label :name %><br />
+          <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+        </div>
+        <div class="field">
+          <div class="mt-1">
+            <%= f.label :email %>
+          </div>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
+        <div class="field">
+          <div class="mt-1">
+            <%= f.label :password %>
+            <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %>
+          </div>
+          <%= f.password_field :password, autocomplete: "new-password" %>
+        </div>
+        <div class="field">
+          <div class="mt-1">
+            <%= f.label :password_confirmation %>
+          </div>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        </div>
+        <div class="actions">
+          <%= f.submit "Sign up" , class: "my-2 btn btn-success" %>
+        </div>
+       <% end %>
+      <div class="my-1">
+        <%= render "devise/shared/links" %>
+      </div>
+  </div>
+</main>
