@@ -1,7 +1,7 @@
   <body class="container">
     <h2>User info</h2>
     <div class="profile-container">
-      <%= attachment_image_tag user, :profile_image, :fill, 40, 40, format: 'jpeg', fallback: "no_image.jpg" %>
+      <%= attachment_image_tag user, :profile_image, :fill, 20, 20, format: 'jpeg', fallback: "no_image.jpg" %>
       <div class="row">
         <p class="col text-left">name</p>
         <p class="col"><%= user.name %></p>
